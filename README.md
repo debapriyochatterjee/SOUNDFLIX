@@ -1,80 +1,65 @@
-# 🎧 SoundFlix — Music Streaming Web App
+# 🎧 SoundFlix
 
-A modern, Spotify-inspired music streaming web application built with **Next.js, React, TypeScript, and Tailwind CSS**. SoundFlix provides a music discovery experience with songs, artists, albums, playlists, and a dedicated music player.
+### A Modern Music Discovery & Streaming Experience
 
-> Discover your sound. Feel every beat. 🎵
+SoundFlix is a Spotify-inspired music discovery web application built with modern web technologies. It focuses on a clean user interface, smooth interactions, responsive layouts, and an engaging music-browsing experience.
+
+<p align="center">
+  <strong>Discover Music. Explore Artists. Feel Every Beat.</strong>
+</p>
+
+---
 
 ## ✨ Features
 
-- 🎵 **Music Discovery** — Explore songs, albums, artists, and playlists.
-- 🔍 **Music Search** — Search demo music data by song title, artist, genre, album, or playlist.
-- ▶️ **Music Player** — Play available audio previews with a dedicated player interface.
+- 🎵 **Music Discovery** — Explore a music-focused streaming interface.
+- 🔍 **Music Search** — Search and discover songs and other music content.
 - ❤️ **Liked Songs** — Keep track of your favorite tracks.
-- 📂 **Playlist Management** — Browse playlists and create or manage playlists through the app interface.
-- 🎤 **Artist & Album Pages** — Explore artist profiles, albums, and their associated tracks.
+- 🎶 **Music Player** — Play available audio previews using the built-in player.
+- 📂 **Playlists** — Explore playlists and manage music collections through the app interface.
+- 🎤 **Artists & Albums** — Browse artist profiles, albums, and associated tracks.
 - 🕘 **Recently Played** — Access recently played music.
-- 👤 **Authentication UI** — Login, signup, and profile interfaces.
-- ⚙️ **Settings** — Manage available music-player and user preferences.
-- 📱 **Responsive Interface** — Designed for desktop and mobile browsing.
-- 🎨 **Modern UI** — Clean layouts, reusable components, and Lucide icons.
+- 👤 **User Profiles** — Profile and account interfaces.
+- ⚙️ **Settings** — Manage available playback and user preferences.
+- 📱 **Responsive Design** — Designed for desktop and mobile devices.
+- 🎨 **Modern UI** — Clean layouts and reusable components.
+- ✨ **Interactive Experience** — Smooth navigation and engaging music-player controls.
 
-*Note: This repository currently includes mock music data for the demo experience. It is not a production music-streaming service.*
+*Features depend on the current implementation. The current demo uses mock music data; external music API integration may require additional configuration.*
 
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
 |---|---|
 | Next.js 16 | React framework and routing |
-| React 19 | User interface |
-| TypeScript | Type-safe development |
-| Tailwind CSS 4 | Styling and responsive layouts |
-| Lucide React | Icons |
-| Local Storage | Client-side persistence where implemented |
+| React 19 | User interface development |
+| TypeScript | Type-safe JavaScript |
+| Tailwind CSS 4 | Styling and responsive design |
+| Lucide React | Icons and interface elements |
+| HTML5 Audio | Browser-based audio playback where supported |
 | npm | Package management |
 
 ## 📁 Project Structure
 
 ```text
 SoundFlix/
-├── public/
-│   └── Static assets
+├── public/                 # Static assets
 ├── src/
-│   ├── app/
-│   │   ├── album/
-│   │   ├── albums/
-│   │   ├── artist/
-│   │   ├── artists/
-│   │   ├── browse/
-│   │   ├── liked/
-│   │   ├── login/
-│   │   ├── playlist/
-│   │   ├── playlists/
-│   │   ├── profile/
-│   │   ├── recently-played/
-│   │   ├── search/
-│   │   ├── settings/
-│   │   ├── signup/
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── layout/
-│   │   ├── music/
-│   │   ├── player/
-│   │   ├── playlist/
-│   │   └── ui/
-│   ├── context/
-│   ├── hooks/
-│   ├── lib/
-│   └── types/
-├── .env.local.example
-├── .gitignore
-├── next.config.ts
-├── package.json
-├── package-lock.json
-├── postcss.config.mjs
-├── README.md
-└── tsconfig.json
+│   ├── app/                # Application routes and pages
+│   ├── components/         # Reusable UI components
+│   ├── context/            # React context providers
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utilities and music data
+│   └── types/              # TypeScript type definitions
+├── .env.local.example      # Example environment configuration
+├── .gitignore              # Git exclusions
+├── next.config.ts          # Next.js configuration
+├── next-env.d.ts           # Next.js type references
+├── package.json            # Dependencies and scripts
+├── package-lock.json       # Dependency lock file
+├── postcss.config.mjs      # PostCSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── README.md               # Project documentation
 ```
 
 ## 🚀 Getting Started
@@ -90,32 +75,37 @@ Follow these steps to run SoundFlix locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-Replace `YOUR_GITHUB_REPOSITORY_URL` with your actual GitHub repository URL.
-
-### 2. Open the Project Folder
-
-```bash
+git clone https://github.com/YOUR_USERNAME/SoundFlix.git
 cd SoundFlix
 ```
 
-### 3. Install Dependencies
+Replace `YOUR_USERNAME` and `SoundFlix` with your actual GitHub username and repository name if they differ.
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Configure Environment Variables
+### 3. Configure Environment Variables
 
-The current demo does not require an API key for its mock music data.
+The current demo uses mock music data and does not require an API key for its basic experience.
 
-An optional `.env.local.example` file is included for future Jamendo API integration. If you later enable that integration, configure the required environment variable in your local `.env.local` file.
+An example environment file is provided for optional integrations.
 
-Never commit private API keys or secrets to GitHub.
+If you enable an external music API in the future, create a `.env.local` file in the project root and configure the environment variables required by your implementation.
 
-### 5. Start the Development Server
+Example:
+
+```env
+NEXT_PUBLIC_JAMENDO_CLIENT_ID=your_jamendo_client_id
+```
+
+This is an optional example for Jamendo integration, not a requirement for running the current mock-data demo.
+
+**Never upload private API keys, credentials, passwords, or `.env.local` to GitHub.**
+
+### 4. Start the Development Server
 
 ```bash
 npm run dev
@@ -123,90 +113,70 @@ npm run dev
 
 Open the following URL in your browser:
 
-**http://localhost:3000**
+[http://localhost:3000](http://localhost:3000)
 
-## 📜 Available Scripts
+### 5. Build for Production
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start the development server |
-| `npm run build` | Create a production build |
-| `npm run start` | Start the production server after building |
-
-## 🖼️ Screenshots
-
-Add screenshots of the actual running application here.
-
-Suggested screenshots:
-
-- Home / Music Discovery
-- Browse Music
-- Search Results
-- Album Details
-- Artist Details
-- Playlist Page
-- Music Player
-- Mobile Layout
-
-Save your screenshots inside a folder such as `screenshots/` and reference them using Markdown image links.
-
-Example:
-
-```markdown
-![SoundFlix Home](screenshots/home.png)
+```bash
+npm run build
+npm run start
 ```
 
-Only add screenshots that you have actually captured from the application.
+Check `package.json` for the scripts supported by your project.
 
-## 🧭 Application Routes
+## 🔒 GitHub Security
 
-| Route | Purpose |
-|---|---|
-| `/` | Home page |
-| `/browse` | Browse music |
-| `/search` | Search songs and other music content |
-| `/albums` | Album collection |
-| `/album/[id]` | Album details |
-| `/artists` | Artist collection |
-| `/artist/[id]` | Artist details |
-| `/playlists` | Playlist collection |
-| `/playlist/[id]` | Playlist details |
-| `/liked` | Liked songs |
-| `/recently-played` | Recently played music |
-| `/profile` | User profile |
-| `/settings` | Application settings |
-| `/login` | Login interface |
-| `/signup` | Signup interface |
+The following files and folders should remain excluded from Git when applicable:
 
-## 🔐 Security
+```gitignore
+node_modules/
+.next/
+out/
+coverage/
+.env
+.env.local
+.env.*.local
+*.tsbuildinfo
+```
 
-- Do not upload `.env.local` or other files containing secrets.
-- Keep credentials and private API keys out of source control.
-- Use environment variables for future integrations that require credentials.
-- The current demo authentication interfaces should not be treated as production-grade authentication.
+Keep the application source code, `public/`, `package.json`, `package-lock.json`, configuration files, and README in your repository.
 
-## 🚧 Future Improvements
+The `.env.local.example` file can be committed as long as it contains only placeholder values and no real secrets.
 
-- Integrate a live music search API.
-- Improve music recommendations.
-- Add secure, persistent user authentication.
-- Add backend APIs and database support.
+## 🎯 Project Goal
+
+SoundFlix is an independent learning and portfolio project created to explore modern frontend development concepts, including component-based architecture, responsive UI design, routing, React state management, music playback, and reusable application components.
+
+## 🔮 Future Improvements
+
+- Integrate a live music discovery API.
+- Improve music recommendations and search functionality.
+- Add secure authentication and persistent user accounts.
 - Synchronize playlists and liked songs across devices.
-- Add automated testing and deployment workflows.
+- Introduce backend APIs and database support.
+- Improve accessibility and keyboard navigation.
+- Expand automated testing.
+- Add deployment documentation and production monitoring.
 
-## 👨‍💻 Developer
+## 👨‍💻 Author
 
 **Debapriyo Chatterjee**
 
 - GitHub: [@debapriyochatterjee](https://github.com/debapriyochatterjee)
 - LinkedIn: [debapriyochatterjee](https://www.linkedin.com/in/debapriyochatterjee/)
 
-## ⚖️ Disclaimer
+## 📄 Disclaimer
 
-SoundFlix is an independent educational and portfolio project inspired by modern music-streaming interfaces. It is not affiliated with or endorsed by Spotify.
+SoundFlix is an independent educational and portfolio project inspired by modern music-streaming interfaces. It is not affiliated with, endorsed by, or associated with Spotify.
 
-Music samples, artwork, and other demo assets may be provided by third-party sources. Their respective rights remain with their owners.
+Music previews, artwork, and metadata may be provided by third-party services. All respective rights remain with their owners.
 
 ---
 
-**SoundFlix — Your music, your mood, your world. 🎧**
+<p align="center">
+  <strong>SoundFlix — Your Music. Your Mood. Your World. 🎧</strong>
+</p>
+
+<p align="center">
+  Made with ❤️ using Next.js, React, and TypeScript
+</p>
